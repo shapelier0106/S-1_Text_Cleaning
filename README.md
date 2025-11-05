@@ -23,7 +23,7 @@ This document describes the pipeline used to extract target sections from SEC Fo
 
 ## 2. Transforming HTML Code to TXT
 
-2.1 Extract** the first `<TEXT>…</TEXT>` block from the source as the main content.  
+2.1 Extract the first `<TEXT>…</TEXT>` block from the source as the main content.  
 2.2 Table detection: find `<TABLE>` tags. If the 300 characters before a table contain a standalone line “Table of Contents,” mark it as a TOC table; otherwise mark it as a normal table.  
 2.3 For TOC tables: if following tables are separated only by whitespace/layout tags, merge them into one TOC. Reformat the merged table into a fixed-width text directory.  
 2.4 For normal tables: parse rows/cells. If ≥30% of cells look numeric (money, percentages, bps, thousands separators), treat it as a data table and drop it; otherwise, join each row into a paragraph.  
